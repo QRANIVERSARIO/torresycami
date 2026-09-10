@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,41 +13,67 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
+
 <style>
 
 /* =====================================================
-   CONFIGURACIÓN GENERAL
+   VARIABLES
 ===================================================== */
 
 :root {
+
     --fondo: #f5ede4;
-    --fondo2: #eee0d5;
+    --fondo-oscuro: #ead8ca;
+
     --blanco: #fffdf9;
+
     --marron: #654536;
-    --marron-claro: #8b6957;
+    --marron-claro: #8c6b5a;
+
     --rosa: #b56b6b;
     --rosa-claro: #d8aaa0;
+
 }
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
+
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
 
 body {
+
     background: var(--fondo);
+
     color: var(--marron);
+
     font-family: "DM Sans", Arial, sans-serif;
+
     overflow-x: hidden;
+
 }
 
+
 button {
+
     font-family: inherit;
+
 }
 
 
@@ -55,92 +82,161 @@ button {
 ===================================================== */
 
 .inicio {
+
     min-height: 100vh;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
+
     padding: 40px 20px;
 
+    position: relative;
+
+
     background:
+
         radial-gradient(
             circle at 15% 20%,
-            rgba(255,255,255,.9),
+            rgba(255,255,255,.95),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 85% 80%,
-            rgba(215,177,160,.35),
+            rgba(216,170,160,.35),
             transparent 35%
         ),
+
         var(--fondo);
 
-    position: relative;
 }
+
 
 .inicio::before {
+
     content: "♥";
+
     position: absolute;
-    top: 10%;
+
+    top: 12%;
     left: 8%;
-    font-size: 20px;
+
+    font-size: 22px;
+
     color: rgba(181,107,107,.35);
+
 }
+
 
 .inicio::after {
+
     content: "♥";
+
     position: absolute;
-    bottom: 15%;
-    right: 9%;
-    font-size: 30px;
+
+    bottom: 13%;
+    right: 8%;
+
+    font-size: 32px;
+
     color: rgba(181,107,107,.25);
+
 }
+
 
 .corazon-inicial {
+
     font-size: 75px;
+
     color: var(--rosa);
+
     animation: latido 2s infinite;
+
     margin-bottom: 20px;
+
 }
+
 
 .titulo-inicial {
+
     font-family: "Great Vibes", cursive;
-    font-size: clamp(65px, 11vw, 125px);
+
+    font-size: clamp(70px, 12vw, 130px);
+
     font-weight: 400;
+
     line-height: 1;
+
     color: var(--marron);
+
 }
+
 
 .subtitulo-inicial {
+
     margin-top: 25px;
+
     font-family: "Cormorant Garamond", serif;
-    font-size: 26px;
+
+    font-size: 27px;
+
     font-style: italic;
+
     color: var(--marron-claro);
+
 }
+
 
 .boton-amor {
+
     margin-top: 40px;
-    padding: 16px 38px;
+
+    padding: 15px 40px;
+
     border: 1px solid var(--marron);
+
     border-radius: 50px;
+
     background: transparent;
+
     color: var(--marron);
+
     font-family: "Cormorant Garamond", serif;
-    font-size: 24px;
-    transition: .3s ease;
+
+    font-size: 25px;
+
     cursor: pointer;
+
+    transition: all .35s ease;
+
 }
+
 
 .boton-amor:hover {
+
     background: var(--marron);
+
     color: white;
-    transform: translateY(-3px);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(70,45,34,.18);
+
 }
 
+
 .corazon-bonito {
+
     color: var(--rosa);
+
 }
 
 
@@ -149,83 +245,145 @@ button {
 ===================================================== */
 
 .historia {
+
     min-height: 100vh;
+
     padding: 100px 20px;
+
     text-align: center;
+
     background: var(--fondo);
+
 }
+
 
 .fecha {
+
     font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
+
+    font-size: 26px;
+
     letter-spacing: 2px;
+
     margin-bottom: 45px;
+
 }
+
+
+/* =====================================================
+   FOTOS
+===================================================== */
 
 .carrusel {
-    width: min(90vw, 430px);
+
+    width: min(90vw, 450px);
+
     margin: auto;
+
     position: relative;
+
     overflow: hidden;
+
 }
+
 
 .contenedor-fotos {
+
     display: flex;
+
     width: 100%;
+
     transition: transform .6s ease;
+
 }
+
 
 .polaroid {
+
     flex: 0 0 100%;
+
     padding: 14px;
+
     background: white;
-    box-shadow: 0 20px 55px rgba(70,45,34,.16);
+
+    box-shadow:
+        0 20px 55px rgba(70,45,34,.16);
+
 }
+
 
 .polaroid img {
+
     display: block;
+
     width: 100%;
-    height: 540px;
+
+    height: 550px;
+
     object-fit: cover;
+
 }
+
 
 .flecha {
+
     position: absolute;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     z-index: 10;
 
-    width: 46px;
-    height: 46px;
+    width: 48px;
+
+    height: 48px;
 
     border: none;
+
     border-radius: 50%;
 
-    background: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.93);
+
     color: var(--marron);
 
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 36px;
 
     cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+
 }
+
 
 .flecha.izquierda {
+
     left: 10px;
+
 }
+
 
 .flecha.derecha {
+
     right: 10px;
+
 }
+
 
 .puntos {
+
     margin-top: 25px;
+
 }
 
+
 .punto {
+
     display: inline-block;
 
     width: 8px;
+
     height: 8px;
 
     margin: 0 5px;
@@ -233,20 +391,27 @@ button {
     border-radius: 50%;
 
     background: #cdb9aa;
+
 }
+
 
 .punto.activo {
+
     background: var(--marron);
+
 }
 
+
 .nombre-pareja {
+
     margin-top: 35px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 62px;
+    font-size: 65px;
 
     color: var(--marron);
+
 }
 
 
@@ -255,58 +420,69 @@ button {
 ===================================================== */
 
 .cuenta-atras-seccion {
+
     max-width: 900px;
+
     margin: 100px auto 0;
 
-    padding: 60px 30px;
+    padding: 65px 30px;
 
-    background: rgba(255,255,255,.58);
+    background: rgba(255,255,255,.60);
 
     box-shadow:
         0 20px 60px rgba(70,45,34,.10);
+
 }
+
 
 .cuenta-atras-titulo {
+
     font-family: "Great Vibes", cursive;
-    font-size: 48px;
+
+    font-size: 52px;
+
 }
 
+
 .cuenta-atras-subtitulo {
+
     margin-top: 10px;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 28px;
+    font-size: 29px;
+
 }
 
+
 .cuenta-atras {
+
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
 
     gap: 25px;
 
     margin-top: 45px;
+
 }
 
-.cuenta-bloque {
-    text-align: center;
-}
 
 .cuenta-bloque strong {
+
     display: block;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 62px;
+    font-size: 64px;
 
     font-weight: 500;
 
-    color: var(--marron);
 }
 
+
 .cuenta-bloque span {
+
     display: block;
 
     margin-top: 5px;
@@ -318,16 +494,20 @@ button {
     letter-spacing: 3px;
 
     color: var(--marron-claro);
+
 }
 
+
 .cuenta-fecha {
+
     margin-top: 40px;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 23px;
+    font-size: 24px;
 
     letter-spacing: 2px;
+
 }
 
 
@@ -336,11 +516,16 @@ button {
 ===================================================== */
 
 .sobre-seccion {
-    padding: 100px 20px 60px;
+
+    padding: 110px 20px 70px;
+
 }
 
+
 .sobre {
+
     width: 320px;
+
     height: 210px;
 
     position: relative;
@@ -348,9 +533,14 @@ button {
     margin: auto;
 
     cursor: pointer;
+
+    perspective: 800px;
+
 }
 
+
 .cuerpo-sobre {
+
     position: absolute;
 
     inset: 0;
@@ -361,9 +551,12 @@ button {
         0 20px 50px rgba(70,45,34,.20);
 
     z-index: 1;
+
 }
 
+
 .cuerpo-sobre::before {
+
     content: "";
 
     position: absolute;
@@ -375,13 +568,18 @@ button {
     height: 0;
 
     border-left: 160px solid transparent;
+
     border-right: 160px solid transparent;
+
     border-bottom: 120px solid #bc9485;
 
     z-index: 3;
+
 }
 
+
 .tapa-sobre {
+
     position: absolute;
 
     top: 0;
@@ -391,7 +589,9 @@ button {
     height: 0;
 
     border-left: 160px solid transparent;
+
     border-right: 160px solid transparent;
+
     border-top: 125px solid #b48676;
 
     transform-origin: top;
@@ -399,16 +599,22 @@ button {
     transition: transform .8s ease;
 
     z-index: 5;
+
 }
+
 
 .sobre.abierto .tapa-sobre {
+
     transform: rotateX(180deg);
+
 }
 
+
 .texto-sobre {
+
     position: absolute;
 
-    top: 75px;
+    top: 70px;
 
     width: 100%;
 
@@ -421,9 +627,12 @@ button {
     font-family: "Great Vibes", cursive;
 
     font-size: 36px;
+
 }
 
+
 .boton-descubrir {
+
     display: block;
 
     margin: 35px auto 0;
@@ -436,19 +645,23 @@ button {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 27px;
+    font-size: 28px;
 
     cursor: pointer;
+
 }
 
+
 .hecho-amor {
+
     margin-top: 70px;
 
     text-align: center;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 21px;
+    font-size: 22px;
+
 }
 
 
@@ -457,12 +670,16 @@ button {
 ===================================================== */
 
 .carta-seccion {
+
     padding: 100px 20px;
 
-    background: var(--fondo2);
+    background: var(--fondo-oscuro);
+
 }
 
+
 .carta {
+
     max-width: 850px;
 
     margin: auto;
@@ -473,40 +690,50 @@ button {
 
     box-shadow:
         0 25px 70px rgba(70,45,34,.13);
+
 }
 
+
 .carta-titulo {
+
     text-align: center;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 58px;
+    font-size: 60px;
 
     font-weight: 400;
 
     margin-bottom: 50px;
+
 }
 
+
 .carta p {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 23px;
+    font-size: 24px;
 
     line-height: 1.75;
 
     margin-bottom: 27px;
 
     color: #604638;
+
 }
 
+
 .carta-firma {
+
     text-align: right;
 
     font-family: "Great Vibes", cursive !important;
 
-    font-size: 42px !important;
+    font-size: 44px !important;
 
     margin-top: 45px;
+
 }
 
 
@@ -515,19 +742,24 @@ button {
 ===================================================== */
 
 .siempre-juntos {
+
     text-align: center;
 
-    margin: 80px 0 70px;
+    margin: 85px 0 75px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 58px;
+    font-size: 62px;
+
 }
 
+
 .siempre-juntos span {
+
     color: var(--rosa);
 
     font-size: 28px;
+
 }
 
 
@@ -536,45 +768,126 @@ button {
 ===================================================== */
 
 .pregunta {
+
     text-align: center;
 
-    padding-top: 60px;
+    padding-top: 65px;
 
     border-top: 1px solid #dfcec2;
+
 }
 
+
 .pregunta h2 {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 44px;
+    font-size: 46px;
 
     font-weight: 500;
 
-    line-height: 1.25;
+    line-height: 1.3;
+
 }
 
+
+/* =====================================================
+   BOTÓN SÍ QUIERO
+===================================================== */
+
 .boton-si {
-    margin-top: 35px;
 
-    padding: 16px 38px;
+    position: relative;
 
-    border: none;
+    margin-top: 38px;
 
-    border-radius: 50px;
+    padding: 18px 48px;
 
-    background: var(--marron);
+    border: 1px solid rgba(101,69,54,.35);
 
-    color: white;
+    border-radius: 60px;
 
-    font-size: 16px;
+    background: linear-gradient(
+        135deg,
+        #ead1c7,
+        #d8aaa0
+    );
+
+    color: #5d4033;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
 
     cursor: pointer;
 
-    transition: .3s ease;
+    box-shadow:
+        0 10px 30px rgba(101,69,54,.16);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    overflow: hidden;
+
 }
 
+
+.boton-si::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left .7s ease;
+
+}
+
+
+.boton-si:hover::before {
+
+    left: 140%;
+
+}
+
+
 .boton-si:hover {
-    transform: scale(1.06);
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 40px rgba(101,69,54,.23);
+
+}
+
+
+.boton-si:active {
+
+    transform: scale(.97);
+
 }
 
 
@@ -583,60 +896,71 @@ button {
 ===================================================== */
 
 .tiempo {
+
     padding: 100px 20px;
 
     text-align: center;
 
     background: var(--fondo);
+
 }
 
+
 .tarjeta-tiempo {
+
     max-width: 1000px;
 
     margin: auto;
 
-    padding: 65px 30px;
+    padding: 70px 30px;
 
     background: white;
 
     box-shadow:
         0 20px 60px rgba(70,45,34,.10);
+
 }
 
+
 .tiempo-titulo {
+
     max-width: 750px;
 
     margin: 0 auto 55px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 45px;
+    font-size: 48px;
 
-    line-height: 1.2;
+    line-height: 1.25;
+
 }
+
 
 .contador {
+
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
 
     gap: 30px;
+
 }
 
-.bloque-tiempo {
-    text-align: center;
-}
 
 .numero {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 78px;
+    font-size: 80px;
 
     font-weight: 500;
+
 }
 
+
 .etiqueta {
+
     font-size: 11px;
 
     text-transform: uppercase;
@@ -644,14 +968,18 @@ button {
     letter-spacing: 3px;
 
     color: var(--marron-claro);
+
 }
 
+
 .de-mi-vida {
+
     margin-top: 40px;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 27px;
+    font-size: 28px;
+
 }
 
 
@@ -660,12 +988,16 @@ button {
 ===================================================== */
 
 .final {
+
     max-width: 900px;
 
     margin: 90px auto 0;
+
 }
 
+
 .final img {
+
     display: block;
 
     width: 100%;
@@ -676,16 +1008,20 @@ button {
 
     box-shadow:
         0 25px 65px rgba(70,45,34,.18);
+
 }
 
+
 .final-texto {
+
     margin-top: 50px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 52px;
+    font-size: 55px;
 
     line-height: 1.2;
+
 }
 
 
@@ -694,6 +1030,7 @@ button {
 ===================================================== */
 
 .corazones {
+
     position: fixed;
 
     inset: 0;
@@ -703,9 +1040,12 @@ button {
     overflow: hidden;
 
     z-index: 9998;
+
 }
 
+
 .corazon-flotante {
+
     position: absolute;
 
     bottom: -60px;
@@ -717,22 +1057,26 @@ button {
         6s
         linear
         forwards;
+
 }
 
 
 /* =====================================================
-   BOTÓN DE MÚSICA
+   MÚSICA
 ===================================================== */
 
 .music-button {
+
     position: fixed;
 
     right: 22px;
+
     bottom: 22px;
 
     z-index: 9999;
 
     width: 55px;
+
     height: 55px;
 
     border: 1px solid var(--marron);
@@ -751,10 +1095,14 @@ button {
         0 8px 25px rgba(70,45,34,.18);
 
     transition: .3s ease;
+
 }
 
+
 .music-button:hover {
+
     transform: scale(1.08);
+
 }
 
 
@@ -766,33 +1114,44 @@ button {
 
     0%,
     100% {
+
         transform: scale(1);
+
     }
 
     50% {
+
         transform: scale(1.12);
+
     }
+
 }
+
 
 @keyframes subirCorazon {
 
     0% {
+
         transform:
             translateY(0)
             rotate(0deg)
             scale(.5);
 
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translateY(-110vh)
             rotate(30deg)
             scale(1.4);
 
         opacity: 0;
+
     }
+
 }
 
 
@@ -802,77 +1161,139 @@ button {
 
 @media (max-width: 700px) {
 
+
     .titulo-inicial {
-        font-size: 65px;
+
+        font-size: 70px;
+
     }
+
 
     .subtitulo-inicial {
-        font-size: 20px;
+
+        font-size: 21px;
+
     }
+
 
     .nombre-pareja {
-        font-size: 52px;
+
+        font-size: 54px;
+
     }
+
 
     .polaroid img {
+
         height: 430px;
+
     }
+
 
     .cuenta-atras {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 15px;
+
+        grid-template-columns: repeat(2,1fr);
+
     }
+
 
     .cuenta-bloque strong {
-        font-size: 45px;
+
+        font-size: 47px;
+
     }
+
 
     .cuenta-atras-titulo {
-        font-size: 39px;
+
+        font-size: 42px;
+
     }
+
 
     .carta {
+
         padding: 45px 25px;
+
     }
+
 
     .carta-titulo {
-        font-size: 45px;
+
+        font-size: 48px;
+
     }
+
 
     .carta p {
-        font-size: 20px;
+
+        font-size: 21px;
+
     }
+
 
     .siempre-juntos {
-        font-size: 47px;
+
+        font-size: 50px;
+
     }
+
 
     .pregunta h2 {
-        font-size: 34px;
+
+        font-size: 35px;
+
     }
+
+
+    .boton-si {
+
+        font-size: 32px;
+
+        padding: 16px 38px;
+
+    }
+
 
     .contador {
+
         grid-template-columns: 1fr;
+
     }
+
 
     .numero {
-        font-size: 65px;
+
+        font-size: 67px;
+
     }
+
 
     .tiempo-titulo {
-        font-size: 37px;
+
+        font-size: 39px;
+
     }
+
 
     .final img {
+
         height: 480px;
+
     }
+
 
     .final-texto {
-        font-size: 40px;
+
+        font-size: 43px;
+
     }
 
+
     .sobre {
+
         transform: scale(.9);
+
     }
 
 }
@@ -891,25 +1312,41 @@ button {
 
 <section class="inicio" id="inicio">
 
+
     <div class="corazon-inicial">
-        ♥
+
+        ♥ 
+
     </div>
 
+
     <h1 class="titulo-inicial">
+
         Te amo cielo
+
     </h1>
 
+
     <p class="subtitulo-inicial">
+
         una pequeña historia sobre nosotros
+
     </p>
+
 
     <button
         class="boton-amor"
         onclick="abrirHistoria()"
     >
+
         Te amo cielo
-        <span class="corazon-bonito">♥</span>
+
+        <span class="corazon-bonito">
+            ♥
+        </span>
+
     </button>
+
 
 </section>
 
@@ -921,24 +1358,30 @@ button {
 
 <section class="historia" id="historia">
 
+
     <div class="fecha">
+
         9 de octubre de 2024
+
     </div>
+
 
 
     <!-- FOTOS -->
 
     <div class="carrusel">
 
+
         <div
             class="contenedor-fotos"
             id="contenedorFotos"
         >
 
+
             <div class="polaroid">
 
                 <img
-                    src="assets/photos/foto1.jpeg"
+                    src="foto1.jpeg"
                     alt="Cami y Torres"
                 >
 
@@ -948,7 +1391,7 @@ button {
             <div class="polaroid">
 
                 <img
-                    src="assets/photos/foto2.jpeg"
+                    src="foto2.jpeg"
                     alt="Cami y Torres"
                 >
 
@@ -958,13 +1401,15 @@ button {
             <div class="polaroid">
 
                 <img
-                    src="assets/photos/foto3.jpeg"
+                    src="foto3.jpeg"
                     alt="Cami y Torres"
                 >
 
             </div>
+
 
         </div>
+
 
 
         <button
@@ -972,8 +1417,11 @@ button {
             onclick="fotoAnterior()"
             aria-label="Foto anterior"
         >
+
             ‹
+
         </button>
+
 
 
         <button
@@ -981,23 +1429,32 @@ button {
             onclick="fotoSiguiente()"
             aria-label="Foto siguiente"
         >
+
             ›
+
         </button>
 
+
     </div>
+
 
 
     <div class="puntos">
 
         <span class="punto activo"></span>
+
         <span class="punto"></span>
+
         <span class="punto"></span>
 
     </div>
 
 
+
     <div class="nombre-pareja">
+
         Cami y Torres
+
     </div>
 
 
@@ -1008,13 +1465,20 @@ button {
 
     <div class="cuenta-atras-seccion">
 
+
         <div class="cuenta-atras-titulo">
+
             Nuestro próximo aniversario
+
         </div>
 
+
         <div class="cuenta-atras-subtitulo">
+
             Cada día contigo cuenta
+
         </div>
+
 
 
         <div class="cuenta-atras">
@@ -1033,6 +1497,7 @@ button {
             </div>
 
 
+
             <div class="cuenta-bloque">
 
                 <strong id="cuentaHoras">
@@ -1046,6 +1511,7 @@ button {
             </div>
 
 
+
             <div class="cuenta-bloque">
 
                 <strong id="cuentaMinutos">
@@ -1057,6 +1523,7 @@ button {
                 </span>
 
             </div>
+
 
 
             <div class="cuenta-bloque">
@@ -1075,9 +1542,13 @@ button {
         </div>
 
 
+
         <div class="cuenta-fecha">
-            9 de octubre de 2026 ♥
+
+            9 de octubre de 2026 ♥ 
+
         </div>
+
 
     </div>
 
@@ -1096,15 +1567,22 @@ button {
             onclick="abrirCarta()"
         >
 
+
             <div class="texto-sobre">
+
                 Hay algo para ti
+
             </div>
+
 
             <div class="tapa-sobre"></div>
 
+
             <div class="cuerpo-sobre"></div>
 
+
         </div>
+
 
 
         <button
@@ -1113,15 +1591,22 @@ button {
         >
 
             Descúbrelo
-            <span class="corazon-bonito">♥</span>
+
+            <span class="corazon-bonito">
+                ♥
+            </span>
 
         </button>
+
 
 
         <div class="hecho-amor">
 
             Hecho con amor
-            <span class="corazon-bonito">♥</span>
+
+            <span class="corazon-bonito">
+                ♥
+            </span>
 
         </div>
 
@@ -1139,6 +1624,7 @@ button {
 
 <section class="carta-seccion">
 
+
     <div class="carta">
 
 
@@ -1153,28 +1639,43 @@ button {
         </h2>
 
 
+
         <p>
+
             Felices casi dos años amor de mi vida.. han sido meses tan bonitos y a la vez meses tan difíciles. pero esto es algo que te he dicho ya antes, y es que al final agradezco todo lo que ha sucedido porque ha dado mucha fortaleza a nuestra relación, definitivamente no somos los mismos Abraham y Camila de 2024 ni 2025.
+
         </p>
 
 
+
         <p>
+
             No sabía como expresar lo mucho que te quiero y lo importante que eres para mí, así que decidí hacer este sitio web para los dos.
+
         </p>
 
 
+
         <p>
+
             un lugar único y especial donde celebramos un añito más juntos.
+
         </p>
+
 
 
         <p>
+
             Gracias por tu paciencia y amor y sobre todo gracias por amar cada pedacito de mi.
+
         </p>
+
 
 
         <p class="carta-firma">
+
             Te quiero, Torres.
+
         </p>
 
 
@@ -1197,6 +1698,7 @@ button {
 
         <div class="pregunta">
 
+
             <h2>
 
                 ¿Te gustaría seguir escribiendo
@@ -1206,6 +1708,7 @@ button {
                 nuestra historia?
 
             </h2>
+
 
 
             <button
@@ -1220,6 +1723,7 @@ button {
                 </span>
 
             </button>
+
 
         </div>
 
@@ -1246,43 +1750,58 @@ button {
             </div>
 
 
+
             <div class="contador">
 
 
                 <div class="bloque-tiempo">
 
                     <div class="numero">
+
                         100
+
                     </div>
 
                     <div class="etiqueta">
+
                         semanas
+
                     </div>
 
                 </div>
 
 
+
                 <div class="bloque-tiempo">
 
                     <div class="numero">
+
                         701
+
                     </div>
 
                     <div class="etiqueta">
+
                         días
+
                     </div>
 
                 </div>
 
 
+
                 <div class="bloque-tiempo">
 
                     <div class="numero">
+
                         23
+
                     </div>
 
                     <div class="etiqueta">
+
                         meses
+
                     </div>
 
                 </div>
@@ -1291,8 +1810,11 @@ button {
             </div>
 
 
+
             <div class="de-mi-vida">
+
                 de mi vida.
+
             </div>
 
 
@@ -1300,15 +1822,13 @@ button {
 
 
 
-        <!-- =================================================
-             FOTO FINAL
-        ================================================== -->
+        <!-- FOTO FINAL -->
 
         <div class="final">
 
 
             <img
-                src="assets/photos/foto-final.jpeg"
+                src="foto-final.jpeg"
                 alt="Cami y Torres"
             >
 
@@ -1352,11 +1872,14 @@ button {
 <button
     id="musicButton"
     class="music-button"
-    aria-label="Reproducir YOKO"
-    title="Reproducir YOKO"
+    aria-label="Reproducir música"
+    title="Reproducir música"
 >
+
     ♫
+
 </button>
+
 
 
 <audio
@@ -1377,7 +1900,7 @@ button {
 <script>
 
 /* =====================================================
-   IR A NUESTRA HISTORIA
+   IR A LA HISTORIA
 ===================================================== */
 
 function abrirHistoria() {
@@ -1385,7 +1908,9 @@ function abrirHistoria() {
     document
         .getElementById("historia")
         .scrollIntoView({
+
             behavior: "smooth"
+
         });
 
 }
@@ -1397,11 +1922,17 @@ function abrirHistoria() {
 
 let fotoActual = 0;
 
+
 const contenedorFotos =
-    document.getElementById("contenedorFotos");
+    document.getElementById(
+        "contenedorFotos"
+    );
+
 
 const puntos =
-    document.querySelectorAll(".punto");
+    document.querySelectorAll(
+        ".punto"
+    );
 
 
 function actualizarCarrusel() {
@@ -1409,15 +1940,18 @@ function actualizarCarrusel() {
     contenedorFotos.style.transform =
         "translateX(-" +
         (fotoActual * 100) +
-        "%)";
+        "%";
 
 
     puntos.forEach(
         function(punto, index) {
 
             punto.classList.toggle(
+
                 "activo",
+
                 index === fotoActual
+
             );
 
         }
@@ -1430,9 +1964,13 @@ function fotoSiguiente() {
 
     fotoActual++;
 
+
     if (fotoActual > 2) {
+
         fotoActual = 0;
+
     }
+
 
     actualizarCarrusel();
 
@@ -1443,9 +1981,13 @@ function fotoAnterior() {
 
     fotoActual--;
 
+
     if (fotoActual < 0) {
+
         fotoActual = 2;
+
     }
+
 
     actualizarCarrusel();
 
@@ -1453,25 +1995,30 @@ function fotoAnterior() {
 
 
 /* =====================================================
-   SWIPE EN MÓVIL
+   SWIPE MÓVIL
 ===================================================== */
 
 let inicioX = 0;
 
 
 contenedorFotos.addEventListener(
+
     "touchstart",
+
     function(e) {
 
         inicioX =
             e.touches[0].clientX;
 
     }
+
 );
 
 
 contenedorFotos.addEventListener(
+
     "touchend",
+
     function(e) {
 
         const finalX =
@@ -1496,33 +2043,45 @@ contenedorFotos.addEventListener(
         }
 
     }
+
 );
 
 
 /* =====================================================
-   SOBRE Y CARTA
+   ABRIR CARTA
 ===================================================== */
 
 function abrirCarta() {
 
     const sobre =
-        document.getElementById("sobre");
+        document.getElementById(
+            "sobre"
+        );
 
 
-    sobre.classList.add("abierto");
+    sobre.classList.add(
+        "abierto"
+    );
 
 
     setTimeout(
+
         function() {
 
             document
-                .querySelector(".carta-seccion")
+                .querySelector(
+                    ".carta-seccion"
+                )
                 .scrollIntoView({
+
                     behavior: "smooth"
+
                 });
 
         },
+
         700
+
     );
 
 }
@@ -1535,17 +2094,22 @@ function abrirCarta() {
 function celebrar() {
 
     const contenedor =
-        document.getElementById("corazones");
+        document.getElementById(
+            "corazones"
+        );
 
 
     for (
         let i = 0;
-        i < 50;
+        i < 55;
         i++
     ) {
 
+
         const corazon =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         corazon.className =
@@ -1586,12 +2150,15 @@ function celebrar() {
 
 
         setTimeout(
+
             function() {
 
                 corazon.remove();
 
             },
+
             9000
+
         );
 
     }
@@ -1610,6 +2177,7 @@ const fechaObjetivo =
 
 
 function actualizarCuentaAtras() {
+
 
     const ahora =
         Date.now();
@@ -1675,39 +2243,55 @@ function actualizarCuentaAtras() {
     document.getElementById(
         "cuentaDias"
     ).textContent =
-        String(dias).padStart(2, "0");
+        String(dias).padStart(
+            2,
+            "0"
+        );
 
 
     document.getElementById(
         "cuentaHoras"
     ).textContent =
-        String(horas).padStart(2, "0");
+        String(horas).padStart(
+            2,
+            "0"
+        );
 
 
     document.getElementById(
         "cuentaMinutos"
     ).textContent =
-        String(minutos).padStart(2, "0");
+        String(minutos).padStart(
+            2,
+            "0"
+        );
 
 
     document.getElementById(
         "cuentaSegundos"
     ).textContent =
-        String(segundos).padStart(2, "0");
+        String(segundos).padStart(
+            2,
+            "0"
+        );
 
 }
 
 
 actualizarCuentaAtras();
 
+
 setInterval(
+
     actualizarCuentaAtras,
+
     1000
+
 );
 
 
 /* =====================================================
-   MÚSICA YOKO
+   MÚSICA
 ===================================================== */
 
 const music =
@@ -1723,40 +2307,55 @@ const musicButton =
 
 
 musicButton.addEventListener(
+
     "click",
+
     function() {
+
 
         if (music.paused) {
 
+
             music.play()
+
                 .then(
+
                     function() {
 
                         musicButton.textContent =
                             "❚❚";
 
                     }
+
                 )
+
                 .catch(
+
                     function() {
 
                         alert(
-                            "Asegúrate de que el archivo YOKO.mp3 esté dentro de assets/audio/"
+                            "Comprueba que YOKO.mp3 esté dentro de assets/audio/"
                         );
 
                     }
+
                 );
+
 
         } else {
 
+
             music.pause();
+
 
             musicButton.textContent =
                 "♫";
 
+
         }
 
     }
+
 );
 
 </script>
