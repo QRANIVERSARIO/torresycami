@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,37 +12,26 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-
 <style>
 
-/* =========================================================
-   COLORES
-========================================================= */
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
 
 :root {
-
-    --beige: #f4eadb;
-    --beige-claro: #faf5ed;
-
-    --marron: #6d4937;
-    --marron-oscuro: #4d3024;
-    --marron-suave: #8c6853;
-
+    --fondo: #f5ede4;
+    --fondo2: #eee0d5;
     --blanco: #fffdf9;
-
-    --rojo: #a94848;
-
+    --marron: #654536;
+    --marron-claro: #8b6957;
+    --rosa: #b56b6b;
+    --rosa-claro: #d8aaa0;
 }
 
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -51,281 +39,193 @@ html {
 }
 
 body {
-
-    background: var(--beige-claro);
-
+    background: var(--fondo);
     color: var(--marron);
-
-    font-family: "DM Sans", sans-serif;
-
+    font-family: "DM Sans", Arial, sans-serif;
     overflow-x: hidden;
-
 }
 
 button {
     font-family: inherit;
-    cursor: pointer;
 }
 
 
-/* =========================================================
-   PANTALLA INICIAL
-========================================================= */
+/* =====================================================
+   PORTADA
+===================================================== */
 
 .inicio {
-
     min-height: 100vh;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     text-align: center;
-
     padding: 40px 20px;
 
     background:
-
         radial-gradient(
-            circle at 20% 20%,
+            circle at 15% 20%,
             rgba(255,255,255,.9),
             transparent 30%
         ),
-
         radial-gradient(
-            circle at 80% 75%,
-            rgba(213,183,164,.25),
+            circle at 85% 80%,
+            rgba(215,177,160,.35),
             transparent 35%
         ),
-
-        var(--beige);
+        var(--fondo);
 
     position: relative;
-
 }
 
+.inicio::before {
+    content: "♥";
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    font-size: 20px;
+    color: rgba(181,107,107,.35);
+}
+
+.inicio::after {
+    content: "♥";
+    position: absolute;
+    bottom: 15%;
+    right: 9%;
+    font-size: 30px;
+    color: rgba(181,107,107,.25);
+}
 
 .corazon-inicial {
-
-    font-size: 80px;
-
-    color: var(--rojo);
-
-    margin-bottom: 25px;
-
+    font-size: 75px;
+    color: var(--rosa);
     animation: latido 2s infinite;
-
+    margin-bottom: 20px;
 }
-
 
 .titulo-inicial {
-
     font-family: "Great Vibes", cursive;
-
-    font-size: clamp(60px, 10vw, 110px);
-
+    font-size: clamp(65px, 11vw, 125px);
     font-weight: 400;
-
     line-height: 1;
-
     color: var(--marron);
-
 }
-
 
 .subtitulo-inicial {
-
     margin-top: 25px;
-
     font-family: "Cormorant Garamond", serif;
-
-    font-size: 25px;
-
+    font-size: 26px;
     font-style: italic;
-
-    color: var(--marron-suave);
-
+    color: var(--marron-claro);
 }
-
 
 .boton-amor {
-
     margin-top: 40px;
-
-    padding: 16px 34px;
-
+    padding: 16px 38px;
     border: 1px solid var(--marron);
-
     border-radius: 50px;
-
     background: transparent;
-
     color: var(--marron);
-
     font-family: "Cormorant Garamond", serif;
-
-    font-size: 23px;
-
+    font-size: 24px;
     transition: .3s ease;
-
+    cursor: pointer;
 }
-
 
 .boton-amor:hover {
-
     background: var(--marron);
-
     color: white;
-
     transform: translateY(-3px);
-
 }
-
 
 .corazon-bonito {
-
-    color: var(--rojo);
-
+    color: var(--rosa);
 }
 
 
-/* =========================================================
+/* =====================================================
    HISTORIA
-========================================================= */
+===================================================== */
 
 .historia {
-
     min-height: 100vh;
-
-    padding: 90px 20px;
-
+    padding: 100px 20px;
     text-align: center;
-
-    background: var(--beige-claro);
-
+    background: var(--fondo);
 }
-
 
 .fecha {
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: 25px;
-
     letter-spacing: 2px;
-
-    margin-bottom: 40px;
-
+    margin-bottom: 45px;
 }
-
 
 .carrusel {
-
-    position: relative;
-
-    width: min(90vw, 420px);
-
+    width: min(90vw, 430px);
     margin: auto;
-
+    position: relative;
     overflow: hidden;
-
 }
-
 
 .contenedor-fotos {
-
     display: flex;
-
+    width: 100%;
     transition: transform .6s ease;
-
 }
-
 
 .polaroid {
-
     flex: 0 0 100%;
-
-    padding: 15px;
-
+    padding: 14px;
     background: white;
-
-    box-shadow:
-        0 20px 50px rgba(77,48,36,.16);
-
+    box-shadow: 0 20px 55px rgba(70,45,34,.16);
 }
-
 
 .polaroid img {
-
     display: block;
-
     width: 100%;
-
-    height: 520px;
-
+    height: 540px;
     object-fit: cover;
-
 }
-
 
 .flecha {
-
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
+    z-index: 10;
 
-    width: 45px;
-
-    height: 45px;
-
-    border-radius: 50%;
+    width: 46px;
+    height: 46px;
 
     border: none;
+    border-radius: 50%;
 
-    background: rgba(255,255,255,.85);
-
+    background: rgba(255,255,255,.9);
     color: var(--marron);
 
-    font-size: 32px;
+    font-size: 34px;
+    line-height: 40px;
 
-    z-index: 5;
-
+    cursor: pointer;
 }
-
 
 .flecha.izquierda {
-
     left: 10px;
-
 }
-
 
 .flecha.derecha {
-
     right: 10px;
-
 }
-
 
 .puntos {
-
     margin-top: 25px;
-
 }
 
-
 .punto {
-
     display: inline-block;
 
     width: 8px;
-
     height: 8px;
 
     margin: 0 5px;
@@ -333,161 +233,124 @@ button {
     border-radius: 50%;
 
     background: #cdb9aa;
-
 }
-
 
 .punto.activo {
-
     background: var(--marron);
-
 }
 
-
 .nombre-pareja {
-
     margin-top: 35px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 60px;
+    font-size: 62px;
 
     color: var(--marron);
-
 }
 
 
-/* =========================================================
+/* =====================================================
    CUENTA ATRÁS
-========================================================= */
+===================================================== */
 
 .cuenta-atras-seccion {
+    max-width: 900px;
+    margin: 100px auto 0;
 
-    max-width: 850px;
+    padding: 60px 30px;
 
-    margin: 80px auto 0;
-
-    padding: 55px 25px;
-
-    background: rgba(255,255,255,.6);
-
-    border-radius: 8px;
+    background: rgba(255,255,255,.58);
 
     box-shadow:
-        0 15px 45px rgba(77,48,36,.1);
-
+        0 20px 60px rgba(70,45,34,.10);
 }
-
 
 .cuenta-atras-titulo {
-
     font-family: "Great Vibes", cursive;
-
-    font-size: 45px;
-
-    color: var(--marron);
-
+    font-size: 48px;
 }
 
-
 .cuenta-atras-subtitulo {
-
-    margin-top: 8px;
+    margin-top: 10px;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 26px;
-
+    font-size: 28px;
 }
-
 
 .cuenta-atras {
-
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    gap: 20px;
+    gap: 25px;
 
     margin-top: 45px;
-
 }
-
 
 .cuenta-bloque {
-
     text-align: center;
-
 }
 
-
 .cuenta-bloque strong {
-
     display: block;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 55px;
+    font-size: 62px;
 
     font-weight: 500;
 
     color: var(--marron);
-
 }
 
-
 .cuenta-bloque span {
+    display: block;
+
+    margin-top: 5px;
 
     font-size: 10px;
 
     text-transform: uppercase;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 
-    color: var(--marron-suave);
-
+    color: var(--marron-claro);
 }
 
-
 .cuenta-fecha {
-
-    margin-top: 35px;
+    margin-top: 40px;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 23px;
 
+    letter-spacing: 2px;
 }
 
 
-/* =========================================================
+/* =====================================================
    SOBRE
-========================================================= */
+===================================================== */
 
 .sobre-seccion {
-
-    margin-top: 100px;
-
-    padding: 80px 20px;
-
+    padding: 100px 20px 60px;
 }
 
-
 .sobre {
+    width: 320px;
+    height: 210px;
 
     position: relative;
 
-    width: 310px;
-
-    height: 205px;
-
     margin: auto;
 
+    cursor: pointer;
 }
 
-
 .cuerpo-sobre {
-
     position: absolute;
 
     inset: 0;
@@ -495,92 +358,75 @@ button {
     background: #d4b4a5;
 
     box-shadow:
-        0 20px 45px rgba(77,48,36,.2);
+        0 20px 50px rgba(70,45,34,.20);
 
+    z-index: 1;
 }
 
-
 .cuerpo-sobre::before {
-
     content: "";
 
     position: absolute;
 
     bottom: 0;
-
     left: 0;
 
     width: 0;
-
     height: 0;
 
-    border-left: 155px solid transparent;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 120px solid #bc9485;
 
-    border-right: 155px solid transparent;
-
-    border-bottom: 115px solid #bd9687;
-
+    z-index: 3;
 }
 
-
 .tapa-sobre {
-
     position: absolute;
 
-    z-index: 4;
-
     top: 0;
-
     left: 0;
 
     width: 0;
-
     height: 0;
 
-    border-left: 155px solid transparent;
-
-    border-right: 155px solid transparent;
-
-    border-top: 120px solid #b68b7c;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 125px solid #b48676;
 
     transform-origin: top;
 
     transition: transform .8s ease;
 
+    z-index: 5;
 }
-
 
 .sobre.abierto .tapa-sobre {
-
     transform: rotateX(180deg);
-
 }
 
-
 .texto-sobre {
-
     position: absolute;
 
-    z-index: 6;
-
-    top: 70px;
+    top: 75px;
 
     width: 100%;
 
     text-align: center;
 
-    font-family: "Great Vibes", cursive;
-
-    font-size: 35px;
+    z-index: 7;
 
     color: white;
 
+    font-family: "Great Vibes", cursive;
+
+    font-size: 36px;
 }
 
-
 .boton-descubrir {
+    display: block;
 
-    margin-top: 35px;
+    margin: 35px auto 0;
 
     border: none;
 
@@ -590,155 +436,127 @@ button {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 26px;
+    font-size: 27px;
 
+    cursor: pointer;
 }
 
-
 .hecho-amor {
-
     margin-top: 70px;
+
+    text-align: center;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 20px;
-
+    font-size: 21px;
 }
 
 
-/* =========================================================
+/* =====================================================
    CARTA
-========================================================= */
+===================================================== */
 
 .carta-seccion {
-
     padding: 100px 20px;
 
-    background: #eee0d5;
-
+    background: var(--fondo2);
 }
 
-
 .carta {
-
     max-width: 850px;
 
     margin: auto;
 
-    padding: 65px;
+    padding: 70px;
 
     background: var(--blanco);
 
     box-shadow:
-        0 20px 60px rgba(77,48,36,.13);
-
+        0 25px 70px rgba(70,45,34,.13);
 }
 
-
 .carta-titulo {
+    text-align: center;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 55px;
+    font-size: 58px;
 
     font-weight: 400;
 
-    text-align: center;
-
     margin-bottom: 50px;
-
 }
 
-
 .carta p {
-
     font-family: "Cormorant Garamond", serif;
 
     font-size: 23px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 
+    color: #604638;
 }
 
-
 .carta-firma {
-
     text-align: right;
 
     font-family: "Great Vibes", cursive !important;
 
-    font-size: 40px !important;
+    font-size: 42px !important;
 
-    margin-top: 40px;
-
+    margin-top: 45px;
 }
 
 
-/* =========================================================
+/* =====================================================
    SIEMPRE JUNTOS
-========================================================= */
+===================================================== */
 
 .siempre-juntos {
-
     text-align: center;
 
-    margin: 70px 0 60px;
+    margin: 80px 0 70px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 55px;
-
-    color: var(--marron);
-
+    font-size: 58px;
 }
-
 
 .siempre-juntos span {
+    color: var(--rosa);
 
-    color: var(--rojo);
-
-    font-size: 25px;
-
+    font-size: 28px;
 }
 
 
-/* =========================================================
+/* =====================================================
    PREGUNTA
-========================================================= */
+===================================================== */
 
 .pregunta {
-
     text-align: center;
 
-    margin-top: 50px;
+    padding-top: 60px;
 
-    padding-top: 50px;
-
-    border-top: 1px solid #e4d5cb;
-
+    border-top: 1px solid #dfcec2;
 }
 
-
 .pregunta h2 {
-
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 43px;
+    font-size: 44px;
 
     font-weight: 500;
 
-    line-height: 1.2;
-
+    line-height: 1.25;
 }
 
-
 .boton-si {
-
     margin-top: 35px;
 
-    padding: 16px 35px;
+    padding: 16px 38px;
 
     border: none;
 
@@ -750,128 +568,104 @@ button {
 
     font-size: 16px;
 
+    cursor: pointer;
+
     transition: .3s ease;
-
 }
-
 
 .boton-si:hover {
-
-    transform: scale(1.05);
-
+    transform: scale(1.06);
 }
 
 
-/* =========================================================
+/* =====================================================
    ESTADÍSTICAS
-========================================================= */
+===================================================== */
 
 .tiempo {
-
     padding: 100px 20px;
 
     text-align: center;
 
+    background: var(--fondo);
 }
 
-
 .tarjeta-tiempo {
-
     max-width: 1000px;
 
     margin: auto;
 
-    padding: 60px 30px;
+    padding: 65px 30px;
 
     background: white;
 
     box-shadow:
-        0 20px 60px rgba(77,48,36,.1);
-
+        0 20px 60px rgba(70,45,34,.10);
 }
 
-
 .tiempo-titulo {
+    max-width: 750px;
+
+    margin: 0 auto 55px;
 
     font-family: "Great Vibes", cursive;
 
     font-size: 45px;
 
-    color: var(--marron);
-
-    margin-bottom: 45px;
-
+    line-height: 1.2;
 }
-
 
 .contador {
-
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 30px;
-
 }
-
 
 .bloque-tiempo {
-
     text-align: center;
-
 }
-
 
 .numero {
-
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 75px;
+    font-size: 78px;
 
-    color: var(--marron);
-
+    font-weight: 500;
 }
 
-
 .etiqueta {
+    font-size: 11px;
 
     text-transform: uppercase;
 
     letter-spacing: 3px;
 
-    font-size: 11px;
-
-    color: var(--marron-suave);
-
+    color: var(--marron-claro);
 }
 
-
 .de-mi-vida {
-
     margin-top: 40px;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 27px;
-
 }
 
 
-/* =========================================================
+/* =====================================================
    FOTO FINAL
-========================================================= */
+===================================================== */
 
 .final {
+    max-width: 900px;
 
-    max-width: 850px;
-
-    margin: 80px auto 0;
-
+    margin: 90px auto 0;
 }
 
-
 .final img {
-
     display: block;
 
     width: 100%;
@@ -881,30 +675,25 @@ button {
     object-fit: cover;
 
     box-shadow:
-        0 20px 60px rgba(77,48,36,.2);
-
+        0 25px 65px rgba(70,45,34,.18);
 }
 
-
 .final-texto {
-
     margin-top: 50px;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 50px;
+    font-size: 52px;
 
-    color: var(--marron);
-
+    line-height: 1.2;
 }
 
 
-/* =========================================================
+/* =====================================================
    CORAZONES
-========================================================= */
+===================================================== */
 
 .corazones {
-
     position: fixed;
 
     inset: 0;
@@ -914,255 +703,176 @@ button {
     overflow: hidden;
 
     z-index: 9998;
-
 }
 
-
 .corazon-flotante {
-
     position: absolute;
 
-    bottom: -50px;
+    bottom: -60px;
 
-    color: var(--rojo);
+    color: var(--rosa);
 
     animation:
         subirCorazon
         6s
         linear
         forwards;
-
 }
 
 
-/* =========================================================
-   BOTÓN MÚSICA
-========================================================= */
+/* =====================================================
+   BOTÓN DE MÚSICA
+===================================================== */
 
 .music-button {
-
     position: fixed;
 
     right: 22px;
-
     bottom: 22px;
 
     z-index: 9999;
 
     width: 55px;
-
     height: 55px;
 
     border: 1px solid var(--marron);
 
     border-radius: 50%;
 
-    background: rgba(255,253,249,.95);
+    background: rgba(255,253,249,.96);
 
     color: var(--marron);
 
     font-size: 21px;
 
-    box-shadow:
-        0 8px 25px rgba(77,48,36,.18);
+    cursor: pointer;
 
+    box-shadow:
+        0 8px 25px rgba(70,45,34,.18);
+
+    transition: .3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.08);
 }
 
 
-/* =========================================================
+/* =====================================================
    ANIMACIONES
-========================================================= */
+===================================================== */
 
 @keyframes latido {
 
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(1.12);
     }
-
 }
-
 
 @keyframes subirCorazon {
 
     0% {
-
         transform:
             translateY(0)
             rotate(0deg)
             scale(.5);
 
         opacity: 1;
-
     }
 
     100% {
-
         transform:
             translateY(-110vh)
-            rotate(25deg)
+            rotate(30deg)
             scale(1.4);
 
         opacity: 0;
-
     }
-
 }
 
 
-/* =========================================================
+/* =====================================================
    MÓVIL
-========================================================= */
+===================================================== */
 
-@media (max-width: 600px) {
-
-
-    .corazon-inicial {
-
-        font-size: 65px;
-
-    }
-
+@media (max-width: 700px) {
 
     .titulo-inicial {
-
-        font-size: 55px;
-
+        font-size: 65px;
     }
-
 
     .subtitulo-inicial {
-
-        font-size: 19px;
-
+        font-size: 20px;
     }
-
-
-    .historia {
-
-        padding:
-            65px
-            15px;
-
-    }
-
-
-    .polaroid img {
-
-        height: 390px;
-
-    }
-
 
     .nombre-pareja {
-
-        font-size: 48px;
-
+        font-size: 52px;
     }
 
+    .polaroid img {
+        height: 430px;
+    }
 
     .cuenta-atras {
-
         grid-template-columns: repeat(2, 1fr);
-
+        gap: 30px 15px;
     }
-
-
-    .cuenta-atras-titulo {
-
-        font-size: 38px;
-
-    }
-
 
     .cuenta-bloque strong {
-
-        font-size: 42px;
-
+        font-size: 45px;
     }
 
+    .cuenta-atras-titulo {
+        font-size: 39px;
+    }
 
     .carta {
-
-        padding:
-            45px
-            25px;
-
+        padding: 45px 25px;
     }
-
 
     .carta-titulo {
-
-        font-size: 42px;
-
+        font-size: 45px;
     }
-
 
     .carta p {
-
         font-size: 20px;
-
     }
-
 
     .siempre-juntos {
-
-        font-size: 45px;
-
+        font-size: 47px;
     }
-
 
     .pregunta h2 {
-
-        font-size: 35px;
-
+        font-size: 34px;
     }
-
 
     .contador {
-
         grid-template-columns: 1fr;
-
-        gap: 25px;
-
     }
-
 
     .numero {
-
-        font-size: 60px;
-
+        font-size: 65px;
     }
-
 
     .tiempo-titulo {
-
-        font-size: 36px;
-
+        font-size: 37px;
     }
-
 
     .final img {
-
         height: 480px;
-
     }
-
 
     .final-texto {
-
-        font-size: 38px;
-
+        font-size: 40px;
     }
 
-
     .sobre {
-
         transform: scale(.9);
-
     }
 
 }
@@ -1175,66 +885,44 @@ button {
 <body>
 
 
-<!-- =========================================================
+<!-- =====================================================
      PORTADA
-========================================================= -->
+===================================================== -->
 
 <section class="inicio" id="inicio">
 
-
     <div class="corazon-inicial">
-
         ♥
-
     </div>
 
-
     <h1 class="titulo-inicial">
-
         Te amo cielo
-
     </h1>
 
-
     <p class="subtitulo-inicial">
-
         una pequeña historia sobre nosotros
-
     </p>
-
 
     <button
         class="boton-amor"
         onclick="abrirHistoria()"
     >
-
         Te amo cielo
-
-        <span class="corazon-bonito">
-            ♥
-        </span>
-
+        <span class="corazon-bonito">♥</span>
     </button>
-
 
 </section>
 
 
 
-<!-- =========================================================
-     HISTORIA
-========================================================= -->
+<!-- =====================================================
+     NUESTRA HISTORIA
+===================================================== -->
 
-<section
-    class="historia"
-    id="historia"
->
-
+<section class="historia" id="historia">
 
     <div class="fecha">
-
         9 de octubre de 2024
-
     </div>
 
 
@@ -1242,12 +930,10 @@ button {
 
     <div class="carrusel">
 
-
         <div
             class="contenedor-fotos"
             id="contenedorFotos"
         >
-
 
             <div class="polaroid">
 
@@ -1278,29 +964,25 @@ button {
 
             </div>
 
-
         </div>
 
 
         <button
             class="flecha izquierda"
             onclick="fotoAnterior()"
+            aria-label="Foto anterior"
         >
-
             ‹
-
         </button>
 
 
         <button
             class="flecha derecha"
             onclick="fotoSiguiente()"
+            aria-label="Foto siguiente"
         >
-
             ›
-
         </button>
-
 
     </div>
 
@@ -1308,40 +990,30 @@ button {
     <div class="puntos">
 
         <span class="punto activo"></span>
-
         <span class="punto"></span>
-
         <span class="punto"></span>
 
     </div>
 
 
     <div class="nombre-pareja">
-
         Cami y Torres
-
     </div>
 
 
 
-    <!-- =====================================================
+    <!-- =================================================
          CUENTA ATRÁS
-    ====================================================== -->
+    ================================================== -->
 
     <div class="cuenta-atras-seccion">
 
-
         <div class="cuenta-atras-titulo">
-
             Nuestro próximo aniversario
-
         </div>
 
-
         <div class="cuenta-atras-subtitulo">
-
             Cada día contigo cuenta
-
         </div>
 
 
@@ -1351,15 +1023,11 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaDias">
-
                     00
-
                 </strong>
 
                 <span>
-
                     días
-
                 </span>
 
             </div>
@@ -1368,15 +1036,11 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaHoras">
-
                     00
-
                 </strong>
 
                 <span>
-
                     horas
-
                 </span>
 
             </div>
@@ -1385,15 +1049,11 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaMinutos">
-
                     00
-
                 </strong>
 
                 <span>
-
                     minutos
-
                 </span>
 
             </div>
@@ -1402,15 +1062,11 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaSegundos">
-
                     00
-
                 </strong>
 
                 <span>
-
                     segundos
-
                 </span>
 
             </div>
@@ -1420,19 +1076,16 @@ button {
 
 
         <div class="cuenta-fecha">
-
             9 de octubre de 2026 ♥
-
         </div>
-
 
     </div>
 
 
 
-    <!-- =====================================================
+    <!-- =================================================
          SOBRE
-    ====================================================== -->
+    ================================================== -->
 
     <div class="sobre-seccion">
 
@@ -1440,21 +1093,16 @@ button {
         <div
             class="sobre"
             id="sobre"
+            onclick="abrirCarta()"
         >
 
-
             <div class="texto-sobre">
-
                 Hay algo para ti
-
             </div>
-
 
             <div class="tapa-sobre"></div>
 
-
             <div class="cuerpo-sobre"></div>
-
 
         </div>
 
@@ -1465,10 +1113,7 @@ button {
         >
 
             Descúbrelo
-
-            <span class="corazon-bonito">
-                ♥
-            </span>
+            <span class="corazon-bonito">♥</span>
 
         </button>
 
@@ -1476,10 +1121,7 @@ button {
         <div class="hecho-amor">
 
             Hecho con amor
-
-            <span class="corazon-bonito">
-                ♥
-            </span>
+            <span class="corazon-bonito">♥</span>
 
         </div>
 
@@ -1491,19 +1133,18 @@ button {
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CARTA
-========================================================= -->
+===================================================== -->
 
 <section class="carta-seccion">
-
 
     <div class="carta">
 
 
         <h2 class="carta-titulo">
 
-            Feliz aniversario, cielo.
+            Una carta para ti
 
             <span class="corazon-bonito">
                 ♥
@@ -1513,46 +1154,27 @@ button {
 
 
         <p>
-
-            Felices casi dos años amor de mi vida.. han sido meses
-            tan bonitos y a la vez meses tan difíciles. pero esto
-            es algo que te he dicho ya antes, y es que al final
-            agradezco todo lo que ha sucedido porque ha dado mucha
-            fortaleza a nuestra relación, definitivamente no somos
-            los mismos Abraham y Camila de 2024 ni 2025.
-
+            Felices casi dos años amor de mi vida.. han sido meses tan bonitos y a la vez meses tan difíciles. pero esto es algo que te he dicho ya antes, y es que al final agradezco todo lo que ha sucedido porque ha dado mucha fortaleza a nuestra relación, definitivamente no somos los mismos Abraham y Camila de 2024 ni 2025.
         </p>
 
 
         <p>
-
-            No sabía como expresar lo mucho que te quiero y lo
-            importante que eres para mí, así que decidí hacer este
-            sitio web para los dos.
-
+            No sabía como expresar lo mucho que te quiero y lo importante que eres para mí, así que decidí hacer este sitio web para los dos.
         </p>
 
 
         <p>
-
-            un lugar único y especial donde celebramos un añito más
-            juntos.
-
+            un lugar único y especial donde celebramos un añito más juntos.
         </p>
 
 
         <p>
-
-            Gracias por tu paciencia y amor y sobre todo gracias
-            por amar cada pedacito de mi.
-
+            Gracias por tu paciencia y amor y sobre todo gracias por amar cada pedacito de mi.
         </p>
 
 
         <p class="carta-firma">
-
             Te quiero, Torres.
-
         </p>
 
 
@@ -1571,16 +1193,15 @@ button {
 
 
 
-        <!-- =====================================================
-             PREGUNTA
-        ====================================================== -->
+        <!-- PREGUNTA -->
 
         <div class="pregunta">
 
-
             <h2>
 
-                ¿Te gustaría seguir escribiendo<br>
+                ¿Te gustaría seguir escribiendo
+
+                <br>
 
                 nuestra historia?
 
@@ -1600,7 +1221,6 @@ button {
 
             </button>
 
-
         </div>
 
 
@@ -1608,9 +1228,9 @@ button {
 
 
 
-    <!-- =====================================================
+    <!-- =================================================
          ESTADÍSTICAS
-    ====================================================== -->
+    ================================================== -->
 
     <div class="tiempo">
 
@@ -1632,15 +1252,11 @@ button {
                 <div class="bloque-tiempo">
 
                     <div class="numero">
-
                         100
-
                     </div>
 
                     <div class="etiqueta">
-
                         semanas
-
                     </div>
 
                 </div>
@@ -1649,15 +1265,11 @@ button {
                 <div class="bloque-tiempo">
 
                     <div class="numero">
-
                         701
-
                     </div>
 
                     <div class="etiqueta">
-
                         días
-
                     </div>
 
                 </div>
@@ -1666,15 +1278,11 @@ button {
                 <div class="bloque-tiempo">
 
                     <div class="numero">
-
                         23
-
                     </div>
 
                     <div class="etiqueta">
-
                         meses
-
                     </div>
 
                 </div>
@@ -1684,9 +1292,7 @@ button {
 
 
             <div class="de-mi-vida">
-
                 de mi vida.
-
             </div>
 
 
@@ -1694,7 +1300,9 @@ button {
 
 
 
-        <!-- FOTO FINAL -->
+        <!-- =================================================
+             FOTO FINAL
+        ================================================== -->
 
         <div class="final">
 
@@ -1726,9 +1334,9 @@ button {
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CORAZONES
-========================================================= -->
+===================================================== -->
 
 <div
     class="corazones"
@@ -1737,18 +1345,17 @@ button {
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      MÚSICA
-========================================================= -->
+===================================================== -->
 
 <button
     id="musicButton"
     class="music-button"
     aria-label="Reproducir YOKO"
+    title="Reproducir YOKO"
 >
-
     ♫
-
 </button>
 
 
@@ -1767,16 +1374,11 @@ button {
 
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
 
-
-/* =========================================================
-   ABRIR HISTORIA
-========================================================= */
+/* =====================================================
+   IR A NUESTRA HISTORIA
+===================================================== */
 
 function abrirHistoria() {
 
@@ -1789,24 +1391,17 @@ function abrirHistoria() {
 }
 
 
-
-/* =========================================================
+/* =====================================================
    CARRUSEL
-========================================================= */
+===================================================== */
 
 let fotoActual = 0;
 
-
 const contenedorFotos =
-    document.getElementById(
-        "contenedorFotos"
-    );
-
+    document.getElementById("contenedorFotos");
 
 const puntos =
-    document.querySelectorAll(
-        ".punto"
-    );
+    document.querySelectorAll(".punto");
 
 
 function actualizarCarrusel() {
@@ -1836,9 +1431,7 @@ function fotoSiguiente() {
     fotoActual++;
 
     if (fotoActual > 2) {
-
         fotoActual = 0;
-
     }
 
     actualizarCarrusel();
@@ -1851,9 +1444,7 @@ function fotoAnterior() {
     fotoActual--;
 
     if (fotoActual < 0) {
-
         fotoActual = 2;
-
     }
 
     actualizarCarrusel();
@@ -1861,10 +1452,9 @@ function fotoAnterior() {
 }
 
 
-
-/* =========================================================
-   DESLIZAR FOTOS EN MÓVIL
-========================================================= */
+/* =====================================================
+   SWIPE EN MÓVIL
+===================================================== */
 
 let inicioX = 0;
 
@@ -1909,31 +1499,24 @@ contenedorFotos.addEventListener(
 );
 
 
-
-/* =========================================================
-   ABRIR SOBRE
-========================================================= */
+/* =====================================================
+   SOBRE Y CARTA
+===================================================== */
 
 function abrirCarta() {
 
     const sobre =
-        document.getElementById(
-            "sobre"
-        );
+        document.getElementById("sobre");
 
 
-    sobre.classList.add(
-        "abierto"
-    );
+    sobre.classList.add("abierto");
 
 
     setTimeout(
         function() {
 
             document
-                .querySelector(
-                    ".carta-seccion"
-                )
+                .querySelector(".carta-seccion")
                 .scrollIntoView({
                     behavior: "smooth"
                 });
@@ -1945,31 +1528,24 @@ function abrirCarta() {
 }
 
 
-
-/* =========================================================
+/* =====================================================
    CORAZONES
-========================================================= */
+===================================================== */
 
 function celebrar() {
 
-
     const contenedor =
-        document.getElementById(
-            "corazones"
-        );
+        document.getElementById("corazones");
 
 
     for (
         let i = 0;
-        i < 45;
+        i < 50;
         i++
     ) {
 
-
         const corazon =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
         corazon.className =
@@ -2015,7 +1591,7 @@ function celebrar() {
                 corazon.remove();
 
             },
-            8500
+            9000
         );
 
     }
@@ -2023,11 +1599,9 @@ function celebrar() {
 }
 
 
-
-/* =========================================================
+/* =====================================================
    CUENTA ATRÁS
-   9 DE OCTUBRE DE 2026
-========================================================= */
+===================================================== */
 
 const fechaObjetivo =
     new Date(
@@ -2036,7 +1610,6 @@ const fechaObjetivo =
 
 
 function actualizarCuentaAtras() {
-
 
     const ahora =
         Date.now();
@@ -2077,78 +1650,55 @@ function actualizarCuentaAtras() {
 
     const dias =
         Math.floor(
-            diferencia /
-            86400000
+            diferencia / 86400000
         );
 
 
     const horas =
         Math.floor(
-            (
-                diferencia /
-                3600000
-            ) % 24
+            (diferencia / 3600000) % 24
         );
 
 
     const minutos =
         Math.floor(
-            (
-                diferencia /
-                60000
-            ) % 60
+            (diferencia / 60000) % 60
         );
 
 
     const segundos =
         Math.floor(
-            (
-                diferencia /
-                1000
-            ) % 60
+            (diferencia / 1000) % 60
         );
 
 
     document.getElementById(
         "cuentaDias"
     ).textContent =
-        String(dias).padStart(
-            2,
-            "0"
-        );
+        String(dias).padStart(2, "0");
 
 
     document.getElementById(
         "cuentaHoras"
     ).textContent =
-        String(horas).padStart(
-            2,
-            "0"
-        );
+        String(horas).padStart(2, "0");
 
 
     document.getElementById(
         "cuentaMinutos"
     ).textContent =
-        String(minutos).padStart(
-            2,
-            "0"
-        );
+        String(minutos).padStart(2, "0");
 
 
     document.getElementById(
         "cuentaSegundos"
     ).textContent =
-        String(segundos).padStart(
-            2,
-            "0"
-        );
+        String(segundos).padStart(2, "0");
 
 }
 
 
 actualizarCuentaAtras();
-
 
 setInterval(
     actualizarCuentaAtras,
@@ -2156,10 +1706,9 @@ setInterval(
 );
 
 
-
-/* =========================================================
+/* =====================================================
    MÚSICA YOKO
-========================================================= */
+===================================================== */
 
 const music =
     document.getElementById(
@@ -2177,11 +1726,7 @@ musicButton.addEventListener(
     "click",
     function() {
 
-
-        if (
-            music.paused
-        ) {
-
+        if (music.paused) {
 
             music.play()
                 .then(
@@ -2196,22 +1741,18 @@ musicButton.addEventListener(
                     function() {
 
                         alert(
-                            "Comprueba que YOKO.mp3 esté dentro de assets/audio/"
+                            "Asegúrate de que el archivo YOKO.mp3 esté dentro de assets/audio/"
                         );
 
                     }
                 );
 
-
         } else {
-
 
             music.pause();
 
-
             musicButton.textContent =
                 "♫";
-
 
         }
 
