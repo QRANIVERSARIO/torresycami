@@ -1,406 +1,1291 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Te amo cielo ♥</title>
+<title>Te amo cielo ♥</title>
 
-    <meta name="description" content="Una pequeña historia sobre nosotros">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f1eb;
+    color: #4b3732;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(231,196,190,.35), transparent 35%),
+        #f8f1eb;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1.5s ease;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: #8d6b62;
+}
+
+.hero h1 {
+    font-family: "Parisienne", cursive;
+    font-size: clamp(65px, 12vw, 125px);
+    font-weight: 400;
+    color: #704d46;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-style: italic;
+    color: #80635b;
+    margin-bottom: 40px;
+}
+
+.main-button {
+    border: 1px solid #9b766d;
+    background: transparent;
+    color: #704d46;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.main-button:hover {
+    background: #704d46;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.date {
+    margin-top: 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 28px;
+    animation: bounce 2s infinite;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+    padding: 100px 20px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #9b766d;
+    margin-bottom: 18px;
+}
+
+section h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    color: #60443e;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.photos-section {
+    background: #fffaf7;
+    text-align: center;
+}
+
+.section-intro {
+    max-width: 750px;
+    margin: auto;
+}
+
+.section-intro p:last-child {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+.photo-grid {
+    max-width: 1100px;
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.photo-card {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(80,50,40,.15);
+    background: #eaded7;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .8s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.countdown-section {
+    text-align: center;
+    background: #eee0d9;
+}
+
+.countdown-section h2 {
+    margin-bottom: 45px;
+}
+
+.countdown {
+    max-width: 800px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.count-box {
+    background: rgba(255,255,255,.55);
+    padding: 30px 10px;
+    border-radius: 5px;
+}
+
+.count-box span {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    color: #6f4e47;
+}
+
+.count-box small {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+    color: #8d6b62;
+}
+
+.countdown-date {
+    margin-top: 35px;
+    font-family: "Parisienne", cursive;
+    font-size: 34px;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.letter-section {
+    background: #f8f1eb;
+    text-align: center;
+}
+
+.letter-intro {
+    margin-bottom: 50px;
+}
+
+.letter-intro > p:last-child {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+
+/* SOBRE */
+
+.envelope {
+    border: none;
+    background: transparent;
+    display: block;
+    margin: auto;
+}
+
+.envelope-body {
+    width: 300px;
+    height: 200px;
+    background: #d6b8aa;
+    position: relative;
+    margin: auto;
+    box-shadow: 0 20px 45px rgba(80,50,40,.18);
+}
+
+.envelope-body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 110px solid #c6a398;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 110px solid #b99589;
+
+    transform-origin: top;
+    transition: transform .7s ease;
+    z-index: 5;
+}
+
+.letter-preview {
+    position: absolute;
+    width: 230px;
+    height: 150px;
+    background: #fffaf7;
+
+    left: 35px;
+    top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Parisienne", cursive;
+    font-size: 25px;
+
+    transition: transform .8s ease;
+    z-index: 2;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter-preview {
+    transform: translateY(-100px);
+}
+
+.envelope-text {
+    display: block;
+    margin-top: 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    color: #704d46;
+}
+
+
+/* CARTA */
+
+.letter {
+    max-width: 850px;
+    margin: 80px auto 0;
+
+    display: none;
+}
+
+.letter.show {
+    display: block;
+    animation: letterAppear 1s ease;
+}
+
+.letter-paper {
+    background: #fffdfb;
+    padding: 60px;
+    box-shadow: 0 15px 50px rgba(70,45,35,.12);
+    text-align: left;
+
+    border-top: 1px solid #ead8d0;
+    border-bottom: 1px solid #ead8d0;
+}
+
+.letter-paper p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.letter-greeting {
+    font-family: "Parisienne", cursive !important;
+    font-size: 40px !important;
+}
+
+.letter-signature {
+    text-align: right;
+    font-family: "Parisienne", cursive !important;
+    font-size: 35px !important;
+    margin-top: 40px;
+}
+
+.always {
+    margin-top: 80px;
+}
+
+.always p {
+    font-family: "Parisienne", cursive;
+    font-size: 60px;
+    color: #704d46;
+}
+
+.always span {
+    font-size: 25px;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.story-section {
+    background: #ead8d0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-section h2 {
+    max-width: 800px;
+    margin: auto;
+}
+
+.yes-button {
+    margin-top: 45px;
+
+    border: 1px solid #805d55;
+    background: #805d55;
+    color: white;
+
+    padding: 17px 38px;
+    border-radius: 50px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.yes-button:hover {
+    transform: scale(1.05);
+    background: #684841;
+}
+
+
+/* CORAZONES */
+
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 25px;
+    animation: heartFloat 2.5s ease-out forwards;
+    z-index: 9999;
+}
+
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.stats-section {
+    text-align: center;
+    background: #fffaf7;
+}
+
+.stats {
+    max-width: 900px;
+    margin: 60px auto 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.stat strong {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #704d46;
+}
+
+.stat span {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: #8d6b62;
+}
+
+.stats-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   FOTO FINAL
+========================= */
+
+.final-section {
+    background: #f0e1da;
+    text-align: center;
+}
+
+.final-photo {
+    max-width: 800px;
+    height: 600px;
+    margin: auto;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(70,45,35,.2);
+}
+
+.final-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.final-message {
+    margin-top: 50px;
+}
+
+.final-message p {
+    font-family: "Parisienne", cursive;
+    font-size: 55px;
+    color: #704d46;
+}
+
+.final-message span {
+    font-size: 25px;
+}
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    border: 1px solid #9b766d;
+
+    background: rgba(255,250,247,.9);
+    color: #704d46;
+
+    font-size: 22px;
+
+    box-shadow: 0 8px 25px rgba(50,30,20,.15);
+
+    z-index: 1000;
+
+    transition: .3s;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #60443e;
+    color: #f8f1eb;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer p:first-child {
+    font-family: "Parisienne", cursive;
+    font-size: 35px;
+}
+
+footer p:last-child {
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(.5) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300px) scale(1.5) rotate(20deg);
+    }
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 75px 18px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .photo-card {
+        height: 480px;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .count-box span {
+        font-size: 42px;
+    }
+
+    .letter-paper {
+        padding: 35px 25px;
+    }
+
+    .letter-paper p {
+        font-size: 20px;
+    }
+
+    .always p {
+        font-size: 48px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .stat strong {
+        font-size: 65px;
+    }
+
+    .final-photo {
+        height: 500px;
+    }
+
+    .final-message p {
+        font-size: 43px;
+    }
+
+    .envelope-body {
+        width: 280px;
+    }
+
+    .envelope-body::before {
+        border-left-width: 140px;
+        border-right-width: 140px;
+    }
+
+    .envelope-flap {
+        border-left-width: 140px;
+        border-right-width: 140px;
+    }
+
+    .letter-preview {
+        width: 220px;
+        left: 30px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- =========================
-         PORTADA
-    ========================== -->
 
-    <header class="hero">
+<!-- =========================
+     PORTADA
+========================= -->
 
-        <div class="hero-content">
+<header class="hero">
 
-            <p class="small-title">
-                Para el amor de mi vida
-            </p>
+    <div class="hero-content">
 
-            <h1>
-                Te amo cielo
-            </h1>
-
-            <p class="subtitle">
-                una pequeña historia sobre nosotros
-            </p>
-
-            <button class="main-button" id="startButton">
-                Te amo cielo ♥
-            </button>
-
-            <p class="date">
-                9 de octubre de 2024
-            </p>
-
-        </div>
-
-        <div class="scroll-indicator">
-            ↓
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         FOTOS
-    ========================== -->
-
-    <section class="photos-section">
-
-        <div class="section-intro">
-
-            <p class="eyebrow">
-                Nuestra historia
-            </p>
-
-            <h2>
-                Cami y Torres
-            </h2>
-
-            <p>
-                Desde aquel 9 de octubre de 2024,
-                cada momento contigo se convirtió
-                en parte de mi historia favorita.
-            </p>
-
-        </div>
-
-
-        <div class="photo-grid">
-
-            <div class="photo-card">
-                <img
-                    src="assets/photos/foto1.jpeg"
-                    alt="Cami y Torres"
-                >
-            </div>
-
-            <div class="photo-card">
-                <img
-                    src="assets/photos/foto2.jpeg"
-                    alt="Cami y Torres"
-                >
-            </div>
-
-            <div class="photo-card">
-                <img
-                    src="assets/photos/foto3.jpeg"
-                    alt="Cami y Torres"
-                >
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTADOR
-    ========================== -->
-
-    <section class="countdown-section">
-
-        <p class="eyebrow">
-            Nuestro próximo aniversario
+        <p class="small-title">
+            Para el amor de mi vida
         </p>
 
-        <h2>
-            Cada día contigo cuenta
-        </h2>
+        <h1>
+            Te amo cielo
+        </h1>
 
-        <div class="countdown" id="countdown">
-
-            <div class="count-box">
-                <span id="days">00</span>
-                <small>días</small>
-            </div>
-
-            <div class="count-box">
-                <span id="hours">00</span>
-                <small>horas</small>
-            </div>
-
-            <div class="count-box">
-                <span id="minutes">00</span>
-                <small>minutos</small>
-            </div>
-
-            <div class="count-box">
-                <span id="seconds">00</span>
-                <small>segundos</small>
-            </div>
-
-        </div>
-
-        <p class="countdown-date">
-            9 de octubre de 2026 ♥
+        <p class="subtitle">
+            una pequeña historia sobre nosotros
         </p>
 
-    </section>
-
-
-    <!-- =========================
-         CARTA / SOBRE
-    ========================== -->
-
-    <section class="letter-section">
-
-        <div class="letter-intro">
-
-            <p class="eyebrow">
-                Hay algo para ti
-            </p>
-
-            <h2>
-                Una carta para mi amor
-            </h2>
-
-            <p>
-                Algo que quería decirte de una manera diferente...
-            </p>
-
-        </div>
-
-
-        <button class="envelope" id="envelopeButton">
-
-            <div class="envelope-body">
-
-                <div class="envelope-flap"></div>
-
-                <div class="letter-preview">
-                    <span>Para mi amor ♥</span>
-                </div>
-
-            </div>
-
-            <span class="envelope-text">
-                Descúbrelo ♥
-            </span>
-
+        <button class="main-button" id="startButton">
+            Te amo cielo ♥
         </button>
 
+        <p class="date">
+            9 de octubre de 2024
+        </p>
 
-        <div class="letter" id="letter">
+    </div>
 
-            <div class="letter-paper">
+    <div class="scroll-indicator">
+        ↓
+    </div>
 
-                <p class="letter-greeting">
-                    Mi amor,
-                </p>
-
-                <p>
-                    Felices casi dos años amor de mi vida..
-                    han sido meses tan bonitos y a la vez meses
-                    tan difíciles.
-                </p>
-
-                <p>
-                    pero esto es algo que te he dicho ya antes,
-                    y es que al final agradezco todo lo que ha
-                    sucedido porque ha dado mucha fortaleza
-                    a nuestra relación.
-                </p>
-
-                <p>
-                    definitivamente no somos los mismos
-                    Abraham y Camila de 2024 ni 2025.
-                </p>
-
-                <p>
-                    No sabía como expresar lo mucho que te quiero
-                    y lo importante que eres para mí, así que decidí
-                    crear este espacio para los dos.
-                </p>
-
-                <p>
-                    un lugar único y especial donde celebramos
-                    un añito más juntos.
-                </p>
-
-                <p>
-                    Gracias por tu paciencia, amor y sobre todo
-                    gracias por amar cada pedacito de mi.
-                </p>
-
-                <p class="letter-signature">
-                    Te quiero, Torres.
-                    Con mucho amor, Cami.
-                </p>
-
-            </div>
-
-        </div>
+</header>
 
 
-        <div class="always">
+<!-- =========================
+     NUESTRA HISTORIA
+========================= -->
 
-            <p>
-                siempre juntos
-            </p>
+<section class="photos-section">
 
-            <span>
-                ♥
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         HISTORIA
-    ========================== -->
-
-    <section class="story-section">
-
-        <div class="hearts-background">
-            ♥ &nbsp; ♥ &nbsp; ♥
-        </div>
+    <div class="section-intro">
 
         <p class="eyebrow">
-            Nuestro futuro
+            Nuestra historia
         </p>
 
         <h2>
-            ¿Te gustaría seguir escribiendo
-            nuestra historia?
+            Cami y Torres
         </h2>
 
-        <button class="yes-button" id="yesButton">
-            Sí. Quiero. ♥
-        </button>
-
-        <div id="heartContainer"></div>
-
-    </section>
-
-
-    <!-- =========================
-         ESTADÍSTICAS
-    ========================== -->
-
-    <section class="stats-section">
-
-        <p class="eyebrow">
-            Hasta ahora...
+        <p>
+            Desde aquel 9 de octubre de 2024,
+            cada momento contigo se convirtió
+            en parte de mi historia favorita.
         </p>
 
-        <h2>
-            Todo este tiempo contigo
-        </h2>
+    </div>
 
 
-        <div class="stats">
+    <div class="photo-grid">
 
-            <div class="stat">
-                <strong>100</strong>
-                <span>semanas</span>
-            </div>
-
-            <div class="stat">
-                <strong>701</strong>
-                <span>días</span>
-            </div>
-
-            <div class="stat">
-                <strong>23</strong>
-                <span>meses</span>
-            </div>
-
-        </div>
-
-
-        <p class="stats-text">
-            han sido las mejores 100 semanas,
-            701 días y 23 meses de mi vida.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         FOTO FINAL
-    ========================== -->
-
-    <section class="final-section">
-
-        <div class="final-photo">
-
+        <div class="photo-card">
             <img
-                src="assets/photos/foto-final.jpeg"
-                alt="Nuestra foto"
+                src="assets/photos/foto1.jpeg"
+                alt="Cami y Torres"
             >
+        </div>
+
+        <div class="photo-card">
+            <img
+                src="assets/photos/foto2.jpeg"
+                alt="Cami y Torres"
+            >
+        </div>
+
+        <div class="photo-card">
+            <img
+                src="assets/photos/foto3.jpeg"
+                alt="Cami y Torres"
+            >
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTADOR
+========================= -->
+
+<section class="countdown-section">
+
+    <p class="eyebrow">
+        Nuestro próximo aniversario
+    </p>
+
+    <h2>
+        Cada día contigo cuenta
+    </h2>
+
+    <div class="countdown">
+
+        <div class="count-box">
+            <span id="days">00</span>
+            <small>días</small>
+        </div>
+
+        <div class="count-box">
+            <span id="hours">00</span>
+            <small>horas</small>
+        </div>
+
+        <div class="count-box">
+            <span id="minutes">00</span>
+            <small>minutos</small>
+        </div>
+
+        <div class="count-box">
+            <span id="seconds">00</span>
+            <small>segundos</small>
+        </div>
+
+    </div>
+
+    <p class="countdown-date">
+        9 de octubre de 2026 ♥
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CARTA
+========================= -->
+
+<section class="letter-section">
+
+    <div class="letter-intro">
+
+        <p class="eyebrow">
+            Hay algo para ti
+        </p>
+
+        <h2>
+            Una carta para ti
+        </h2>
+
+        <p>
+            Algo que quería decirte de una manera diferente...
+        </p>
+
+    </div>
+
+
+    <button class="envelope" id="envelopeButton">
+
+        <div class="envelope-body">
+
+            <div class="envelope-flap"></div>
+
+            <div class="letter-preview">
+                Para ti ♥
+            </div>
 
         </div>
 
+        <span class="envelope-text">
+            Descúbrelo ♥
+        </span>
 
-        <div class="final-message">
-
-            <p>
-                Gracias por compartir tu vida conmigo
-            </p>
-
-            <span>
-                ♥
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         MÚSICA
-    ========================== -->
-
-    <button class="music-button" id="musicButton">
-        ♫
     </button>
 
-    <audio id="backgroundMusic" loop>
-        <source
-            src="assets/audio/YOKO.mp3"
-            type="audio/mpeg"
+
+    <div class="letter" id="letter">
+
+        <div class="letter-paper">
+
+            <p class="letter-greeting">
+                Hola,
+            </p>
+
+            <p>
+                Felices casi dos años amor de mi vida..
+                han sido meses tan bonitos y a la vez meses
+                tan difíciles.
+            </p>
+
+            <p>
+                pero esto es algo que te he dicho ya antes,
+                y es que al final agradezco todo lo que ha
+                sucedido porque ha dado mucha fortaleza
+                a nuestra relación.
+            </p>
+
+            <p>
+                definitivamente no somos los mismos
+                Abraham y Camila de 2024 ni 2025.
+            </p>
+
+            <p>
+                No sabía como expresar lo mucho que te quiero
+                y lo importante que eres para mí, así que decidí
+                hacer este sitio web para los dos.
+            </p>
+
+            <p>
+                un lugar único y especial donde celebramos
+                un añito más juntos.
+            </p>
+
+            <p>
+                Gracias por tu paciencia y amor y sobre todo
+                gracias por amar cada pedacito de mi.
+            </p>
+
+            <p class="letter-signature">
+                Te quiero, Torres.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="always">
+
+        <p>
+            siempre juntos
+        </p>
+
+        <span>
+            ♥
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HISTORIA FUTURA
+========================= -->
+
+<section class="story-section">
+
+    <p class="eyebrow">
+        Nuestro futuro
+    </p>
+
+    <h2>
+        ¿Te gustaría seguir escribiendo
+        nuestra historia?
+    </h2>
+
+    <button class="yes-button" id="yesButton">
+        Sí. Quiero. ♥
+    </button>
+
+</section>
+
+
+<!-- =========================
+     ESTADÍSTICAS
+========================= -->
+
+<section class="stats-section">
+
+    <p class="eyebrow">
+        Hasta ahora...
+    </p>
+
+    <h2>
+        Todo este tiempo contigo
+    </h2>
+
+
+    <div class="stats">
+
+        <div class="stat">
+            <strong>100</strong>
+            <span>semanas</span>
+        </div>
+
+        <div class="stat">
+            <strong>701</strong>
+            <span>días</span>
+        </div>
+
+        <div class="stat">
+            <strong>23</strong>
+            <span>meses</span>
+        </div>
+
+    </div>
+
+
+    <p class="stats-text">
+        han sido las mejores 100 semanas,
+        701 días y 23 meses de mi vida.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FOTO FINAL
+========================= -->
+
+<section class="final-section">
+
+    <div class="final-photo">
+
+        <img
+            src="assets/photos/foto-final.jpeg"
+            alt="Nuestra foto"
         >
-    </audio>
+
+    </div>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
+    <div class="final-message">
 
         <p>
-            Hecho con mucho amor ♥
+            Gracias por compartir tu vida conmigo
         </p>
 
-        <p>
-            Cami y Torres
-        </p>
+        <span>
+            ♥
+        </span>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+<!-- =========================
+     MÚSICA
+========================= -->
+
+<button class="music-button" id="musicButton">
+    ♫
+</button>
+
+<audio id="backgroundMusic" loop>
+    <source
+        src="assets/audio/YOKO.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        Hecho con amor ♥
+    </p>
+
+    <p>
+        Cami y Torres
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   BOTÓN PORTADA
+========================= */
+
+document.getElementById("startButton").addEventListener("click", function() {
+
+    document.querySelector(".photos-section").scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+const targetDate = new Date("2026-10-09T00:00:00").getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* =========================
+   SOBRE
+========================= */
+
+const envelope = document.getElementById("envelopeButton");
+const letter = document.getElementById("letter");
+
+envelope.addEventListener("click", function() {
+
+    envelope.classList.toggle("open");
+
+    setTimeout(function() {
+
+        letter.classList.add("show");
+
+        if (letter.classList.contains("show")) {
+
+            setTimeout(function() {
+
+                letter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 300);
+
+        }
+
+    }, 500);
+
+});
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+document.getElementById("yesButton").addEventListener("click", function() {
+
+    for (let i = 0; i < 25; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+        heart.textContent = "♥";
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.top =
+            (55 + Math.random() * 25) + "vh";
+
+        heart.style.animationDelay =
+            Math.random() * .8 + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 3000);
+
+    }
+
+});
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+let playing = false;
+
+musicButton.addEventListener("click", function() {
+
+    if (!playing) {
+
+        music.play()
+            .then(function() {
+
+                playing = true;
+                musicButton.textContent = "❚❚";
+
+            })
+            .catch(function() {
+
+                alert("Añade el archivo YOKO.mp3 dentro de assets/audio/");
+
+            });
+
+    } else {
+
+        music.pause();
+
+        playing = false;
+
+        musicButton.textContent = "♫";
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
