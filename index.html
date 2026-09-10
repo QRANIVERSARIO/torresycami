@@ -4,11 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Te amo cielo ♥</title>
+<title>Te amo ♥</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -17,20 +19,25 @@
 <style>
 
 /* =====================================================
-   VARIABLES
+   COLORES
 ===================================================== */
 
 :root {
 
-    --fondo: #f5ede4;
-    --fondo-oscuro: #ead8ca;
+    --fondo: #f6eee6;
+
+    --fondo-2: #ead9cc;
 
     --blanco: #fffdf9;
 
-    --marron: #654536;
-    --marron-claro: #8c6b5a;
+    --marron: #5d4033;
 
-    --rosa: #b56b6b;
+    --marron-oscuro: #432c22;
+
+    --marron-claro: #896b5a;
+
+    --rosa: #b86f70;
+
     --rosa-claro: #d8aaa0;
 
 }
@@ -43,6 +50,7 @@
 * {
 
     margin: 0;
+
     padding: 0;
 
     box-sizing: border-box;
@@ -63,7 +71,7 @@ body {
 
     color: var(--marron);
 
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
 
     overflow-x: hidden;
 
@@ -95,16 +103,15 @@ button {
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 30px;
 
     position: relative;
-
 
     background:
 
         radial-gradient(
             circle at 15% 20%,
-            rgba(255,255,255,.95),
+            rgba(255,255,255,.9),
             transparent 30%
         ),
 
@@ -126,11 +133,12 @@ button {
     position: absolute;
 
     top: 12%;
+
     left: 8%;
 
-    font-size: 22px;
+    font-size: 25px;
 
-    color: rgba(181,107,107,.35);
+    color: rgba(184,111,112,.35);
 
 }
 
@@ -142,24 +150,25 @@ button {
     position: absolute;
 
     bottom: 13%;
+
     right: 8%;
 
-    font-size: 32px;
+    font-size: 35px;
 
-    color: rgba(181,107,107,.25);
+    color: rgba(184,111,112,.25);
 
 }
 
 
 .corazon-inicial {
 
-    font-size: 75px;
+    font-size: 65px;
 
     color: var(--rosa);
 
-    animation: latido 2s infinite;
-
     margin-bottom: 20px;
+
+    animation: latido 2s infinite;
 
 }
 
@@ -168,13 +177,13 @@ button {
 
     font-family: "Great Vibes", cursive;
 
-    font-size: clamp(70px, 12vw, 130px);
+    font-size: clamp(70px, 12vw, 125px);
 
     font-weight: 400;
 
     line-height: 1;
 
-    color: var(--marron);
+    color: var(--marron-oscuro);
 
 }
 
@@ -194,6 +203,10 @@ button {
 }
 
 
+/* =====================================================
+   BOTÓN "TE AMO"
+===================================================== */
+
 .boton-amor {
 
     margin-top: 40px;
@@ -210,11 +223,11 @@ button {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 25px;
+    font-size: 26px;
 
     cursor: pointer;
 
-    transition: all .35s ease;
+    transition: .35s ease;
 
 }
 
@@ -233,7 +246,7 @@ button {
 }
 
 
-.corazon-bonito {
+.corazon {
 
     color: var(--rosa);
 
@@ -261,7 +274,7 @@ button {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 26px;
+    font-size: 27px;
 
     letter-spacing: 2px;
 
@@ -343,7 +356,7 @@ button {
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,.93);
+    background: rgba(255,255,255,.94);
 
     color: var(--marron);
 
@@ -410,7 +423,7 @@ button {
 
     font-size: 65px;
 
-    color: var(--marron);
+    color: var(--marron-oscuro);
 
 }
 
@@ -512,15 +525,44 @@ button {
 
 
 /* =====================================================
-   SOBRE
+   HAY ALGO PARA TI
 ===================================================== */
 
 .sobre-seccion {
 
-    padding: 110px 20px 70px;
+    padding: 110px 20px 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 
 }
 
+
+/* TEXTO ENCIMA DEL SOBRE */
+
+.texto-encima-sobre {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    color: var(--marron-oscuro);
+
+    margin-bottom: 35px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
 
 .sobre {
 
@@ -529,8 +571,6 @@ button {
     height: 210px;
 
     position: relative;
-
-    margin: auto;
 
     cursor: pointer;
 
@@ -545,7 +585,7 @@ button {
 
     inset: 0;
 
-    background: #d4b4a5;
+    background: #d1ad9d;
 
     box-shadow:
         0 20px 50px rgba(70,45,34,.20);
@@ -562,16 +602,18 @@ button {
     position: absolute;
 
     bottom: 0;
+
     left: 0;
 
     width: 0;
+
     height: 0;
 
     border-left: 160px solid transparent;
 
     border-right: 160px solid transparent;
 
-    border-bottom: 120px solid #bc9485;
+    border-bottom: 120px solid #b98d7d;
 
     z-index: 3;
 
@@ -583,9 +625,11 @@ button {
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 0;
+
     height: 0;
 
     border-left: 160px solid transparent;
@@ -610,47 +654,52 @@ button {
 }
 
 
-.texto-sobre {
-
-    position: absolute;
-
-    top: 70px;
-
-    width: 100%;
-
-    text-align: center;
-
-    z-index: 7;
-
-    color: white;
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: 36px;
-
-}
-
+/* =====================================================
+   DESCÚBRELO DEBAJO DEL SOBRE
+===================================================== */
 
 .boton-descubrir {
 
-    display: block;
-
-    margin: 35px auto 0;
+    margin-top: 35px;
 
     border: none;
 
     background: transparent;
 
-    color: var(--marron);
+    color: var(--marron-oscuro);
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 28px;
 
+    font-weight: 500;
+
     cursor: pointer;
+
+    transition: .3s ease;
 
 }
 
+
+.boton-descubrir:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.boton-descubrir .corazon {
+
+    color: var(--rosa);
+
+    margin-left: 5px;
+
+}
+
+
+/* =====================================================
+   HECHO CON AMOR
+===================================================== */
 
 .hecho-amor {
 
@@ -673,7 +722,7 @@ button {
 
     padding: 100px 20px;
 
-    background: var(--fondo-oscuro);
+    background: var(--fondo-2);
 
 }
 
@@ -754,7 +803,7 @@ button {
 }
 
 
-.siempre-juntos span {
+.siempre-juntos .corazon {
 
     color: var(--rosa);
 
@@ -803,7 +852,7 @@ button {
 
     padding: 18px 48px;
 
-    border: 1px solid rgba(101,69,54,.35);
+    border: 1px solid rgba(101,69,54,.30);
 
     border-radius: 60px;
 
@@ -813,15 +862,13 @@ button {
         #d8aaa0
     );
 
-    color: #5d4033;
+    color: #51352a;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 35px;
+    font-size: 37px;
 
     font-weight: 400;
-
-    letter-spacing: .5px;
 
     cursor: pointer;
 
@@ -831,43 +878,6 @@ button {
     transition:
         transform .35s ease,
         box-shadow .35s ease;
-
-    overflow: hidden;
-
-}
-
-
-.boton-si::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -100%;
-
-    width: 60%;
-
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.55),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left .7s ease;
-
-}
-
-
-.boton-si:hover::before {
-
-    left: 140%;
 
 }
 
@@ -884,9 +894,11 @@ button {
 }
 
 
-.boton-si:active {
+.boton-si .corazon {
 
-    transform: scale(.97);
+    color: var(--rosa);
+
+    margin-left: 5px;
 
 }
 
@@ -1025,6 +1037,13 @@ button {
 }
 
 
+.final-texto .corazon {
+
+    color: var(--rosa);
+
+}
+
+
 /* =====================================================
    CORAZONES
 ===================================================== */
@@ -1057,51 +1076,6 @@ button {
         6s
         linear
         forwards;
-
-}
-
-
-/* =====================================================
-   MÚSICA
-===================================================== */
-
-.music-button {
-
-    position: fixed;
-
-    right: 22px;
-
-    bottom: 22px;
-
-    z-index: 9999;
-
-    width: 55px;
-
-    height: 55px;
-
-    border: 1px solid var(--marron);
-
-    border-radius: 50%;
-
-    background: rgba(255,253,249,.96);
-
-    color: var(--marron);
-
-    font-size: 21px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 25px rgba(70,45,34,.18);
-
-    transition: .3s ease;
-
-}
-
-
-.music-button:hover {
-
-    transform: scale(1.08);
 
 }
 
@@ -1176,6 +1150,15 @@ button {
     }
 
 
+    .boton-amor {
+
+        font-size: 24px;
+
+        padding: 14px 35px;
+
+    }
+
+
     .nombre-pareja {
 
         font-size: 54px;
@@ -1207,6 +1190,20 @@ button {
     .cuenta-atras-titulo {
 
         font-size: 42px;
+
+    }
+
+
+    .texto-encima-sobre {
+
+        font-size: 27px;
+
+    }
+
+
+    .sobre {
+
+        transform: scale(.9);
 
     }
 
@@ -1289,13 +1286,6 @@ button {
 
     }
 
-
-    .sobre {
-
-        transform: scale(.9);
-
-    }
-
 }
 
 </style>
@@ -1315,7 +1305,7 @@ button {
 
     <div class="corazon-inicial">
 
-        ♥ 
+        ♥
 
     </div>
 
@@ -1334,14 +1324,16 @@ button {
     </p>
 
 
+    <!-- AQUÍ SOLO TE AMO ♥ -->
+
     <button
         class="boton-amor"
         onclick="abrirHistoria()"
     >
 
-        Te amo cielo
+        Te amo
 
-        <span class="corazon-bonito">
+        <span class="corazon">
             ♥
         </span>
 
@@ -1353,7 +1345,7 @@ button {
 
 
 <!-- =====================================================
-     NUESTRA HISTORIA
+     HISTORIA
 ===================================================== -->
 
 <section class="historia" id="historia">
@@ -1367,7 +1359,9 @@ button {
 
 
 
-    <!-- FOTOS -->
+    <!-- =================================================
+         FOTOS
+    ================================================== -->
 
     <div class="carrusel">
 
@@ -1378,31 +1372,42 @@ button {
         >
 
 
+            <!-- FOTO 1 -->
+
             <div class="polaroid">
 
                 <img
-                    src="foto1.jpeg"
+                    src="./foto1.jpeg"
                     alt="Cami y Torres"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
 
 
+
+            <!-- FOTO 2 -->
+
             <div class="polaroid">
 
                 <img
-                    src="foto2.jpeg"
+                    src="./foto2.jpeg"
                     alt="Cami y Torres"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
 
 
+
+            <!-- FOTO 3 -->
+
             <div class="polaroid">
 
                 <img
-                    src="foto3.jpeg"
+                    src="./foto3.jpeg"
                     alt="Cami y Torres"
+                    onerror="this.style.display='none';"
                 >
 
             </div>
@@ -1415,7 +1420,6 @@ button {
         <button
             class="flecha izquierda"
             onclick="fotoAnterior()"
-            aria-label="Foto anterior"
         >
 
             ‹
@@ -1427,7 +1431,6 @@ button {
         <button
             class="flecha derecha"
             onclick="fotoSiguiente()"
-            aria-label="Foto siguiente"
         >
 
             ›
@@ -1487,11 +1490,15 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaDias">
+
                     00
+
                 </strong>
 
                 <span>
+
                     días
+
                 </span>
 
             </div>
@@ -1501,11 +1508,15 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaHoras">
+
                     00
+
                 </strong>
 
                 <span>
+
                     horas
+
                 </span>
 
             </div>
@@ -1515,11 +1526,15 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaMinutos">
+
                     00
+
                 </strong>
 
                 <span>
+
                     minutos
+
                 </span>
 
             </div>
@@ -1529,11 +1544,15 @@ button {
             <div class="cuenta-bloque">
 
                 <strong id="cuentaSegundos">
+
                     00
+
                 </strong>
 
                 <span>
+
                     segundos
+
                 </span>
 
             </div>
@@ -1545,7 +1564,7 @@ button {
 
         <div class="cuenta-fecha">
 
-            9 de octubre de 2026 ♥ 
+            9 de octubre de 2026 ♥
 
         </div>
 
@@ -1561,18 +1580,23 @@ button {
     <div class="sobre-seccion">
 
 
+        <!-- TEXTO MARRÓN OSCURO ENCIMA -->
+
+        <div class="texto-encima-sobre">
+
+            Hay algo para ti
+
+        </div>
+
+
+
+        <!-- SOBRE -->
+
         <div
             class="sobre"
             id="sobre"
             onclick="abrirCarta()"
         >
-
-
-            <div class="texto-sobre">
-
-                Hay algo para ti
-
-            </div>
 
 
             <div class="tapa-sobre"></div>
@@ -1585,15 +1609,19 @@ button {
 
 
 
+        <!-- TEXTO DEBAJO DEL SOBRE -->
+
         <button
             class="boton-descubrir"
             onclick="abrirCarta()"
         >
 
-            Descúbrelo
+            descúbrelo
 
-            <span class="corazon-bonito">
+            <span class="corazon">
+
                 ♥
+
             </span>
 
         </button>
@@ -1604,8 +1632,10 @@ button {
 
             Hecho con amor
 
-            <span class="corazon-bonito">
+            <span class="corazon">
+
                 ♥
+
             </span>
 
         </div>
@@ -1632,8 +1662,10 @@ button {
 
             Una carta para ti
 
-            <span class="corazon-bonito">
+            <span class="corazon">
+
                 ♥
+
             </span>
 
         </h2>
@@ -1680,21 +1712,27 @@ button {
 
 
 
-        <!-- SIEMPRE JUNTOS -->
+        <!-- =================================================
+             SIEMPRE JUNTOS
+        ================================================== -->
 
         <div class="siempre-juntos">
 
             siempre juntos
 
-            <span>
+            <span class="corazon">
+
                 ♥
+
             </span>
 
         </div>
 
 
 
-        <!-- PREGUNTA -->
+        <!-- =================================================
+             PREGUNTA
+        ================================================== -->
 
         <div class="pregunta">
 
@@ -1718,8 +1756,10 @@ button {
 
                 Sí. Quiero.
 
-                <span class="corazon-bonito">
+                <span class="corazon">
+
                     ♥
+
                 </span>
 
             </button>
@@ -1754,7 +1794,7 @@ button {
             <div class="contador">
 
 
-                <div class="bloque-tiempo">
+                <div>
 
                     <div class="numero">
 
@@ -1772,7 +1812,7 @@ button {
 
 
 
-                <div class="bloque-tiempo">
+                <div>
 
                     <div class="numero">
 
@@ -1790,7 +1830,7 @@ button {
 
 
 
-                <div class="bloque-tiempo">
+                <div>
 
                     <div class="numero">
 
@@ -1822,14 +1862,17 @@ button {
 
 
 
-        <!-- FOTO FINAL -->
+        <!-- =================================================
+             FOTO FINAL
+        ================================================== -->
 
         <div class="final">
 
 
             <img
-                src="foto-final.jpeg"
+                src="./foto-final.jpeg"
                 alt="Cami y Torres"
+                onerror="this.style.display='none';"
             >
 
 
@@ -1837,8 +1880,10 @@ button {
 
                 Gracias por compartir tu vida conmigo
 
-                <span class="corazon-bonito">
+                <span class="corazon">
+
                     ♥
+
                 </span>
 
             </div>
@@ -1854,9 +1899,7 @@ button {
 
 
 
-<!-- =====================================================
-     CORAZONES
-===================================================== -->
+<!-- CORAZONES -->
 
 <div
     class="corazones"
@@ -1865,42 +1908,10 @@ button {
 
 
 
-<!-- =====================================================
-     MÚSICA
-===================================================== -->
-
-<button
-    id="musicButton"
-    class="music-button"
-    aria-label="Reproducir música"
-    title="Reproducir música"
->
-
-    ♫
-
-</button>
-
-
-
-<audio
-    id="backgroundMusic"
-    loop
-    preload="none"
->
-
-    <source
-        src="assets/audio/YOKO.mp3"
-        type="audio/mpeg"
-    >
-
-</audio>
-
-
-
 <script>
 
 /* =====================================================
-   IR A LA HISTORIA
+   BOTÓN DE PORTADA
 ===================================================== */
 
 function abrirHistoria() {
@@ -1944,6 +1955,7 @@ function actualizarCarrusel() {
 
 
     puntos.forEach(
+
         function(punto, index) {
 
             punto.classList.toggle(
@@ -1955,6 +1967,7 @@ function actualizarCarrusel() {
             );
 
         }
+
     );
 
 }
@@ -1995,7 +2008,7 @@ function fotoAnterior() {
 
 
 /* =====================================================
-   SWIPE MÓVIL
+   SWIPE EN MÓVIL
 ===================================================== */
 
 let inicioX = 0;
@@ -2048,7 +2061,7 @@ contenedorFotos.addEventListener(
 
 
 /* =====================================================
-   ABRIR CARTA
+   ABRIR SOBRE Y CARTA
 ===================================================== */
 
 function abrirCarta() {
@@ -2286,75 +2299,6 @@ setInterval(
     actualizarCuentaAtras,
 
     1000
-
-);
-
-
-/* =====================================================
-   MÚSICA
-===================================================== */
-
-const music =
-    document.getElementById(
-        "backgroundMusic"
-    );
-
-
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
-
-musicButton.addEventListener(
-
-    "click",
-
-    function() {
-
-
-        if (music.paused) {
-
-
-            music.play()
-
-                .then(
-
-                    function() {
-
-                        musicButton.textContent =
-                            "❚❚";
-
-                    }
-
-                )
-
-                .catch(
-
-                    function() {
-
-                        alert(
-                            "Comprueba que YOKO.mp3 esté dentro de assets/audio/"
-                        );
-
-                    }
-
-                );
-
-
-        } else {
-
-
-            music.pause();
-
-
-            musicButton.textContent =
-                "♫";
-
-
-        }
-
-    }
 
 );
 
